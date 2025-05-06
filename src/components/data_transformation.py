@@ -26,7 +26,7 @@ class DataTransformation:
                  self.data_transformation_config = DataTransformationConfig()
          def get_data_transformer_object(self):
                  try:
-                         numerical_columns = ['writing_score','reading_score','math_score']
+                         numerical_columns = ['writing_score','reading_score']
                          categorical_columns = [
                                  'gender',
                                  'race_ethnicity',
@@ -73,8 +73,8 @@ class DataTransformation:
 
                          preprocessing_obj = self.get_data_transformer_object()
 
-                         target_name = 'total_score'
-                         numerical_columns = ['writing_score','reading_score','math_score']
+                         target_name = 'math_score'
+                         numerical_columns = ['writing_score','reading_score']
                          input_feature_train_df = train_df.drop(columns=[target_name],axis=1)
                          target_feature_train_df = train_df[target_name]
 
